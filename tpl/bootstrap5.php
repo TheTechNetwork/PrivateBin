@@ -42,7 +42,7 @@ endif;
 		<script type="text/javascript" data-cfasync="false" src="js/base-x-4.0.0.js" integrity="sha512-nNPg5IGCwwrveZ8cA/yMGr5HiRS5Ps2H+s0J/mKTPjCPWUgFGGw7M5nqdnPD3VsRwCVysUh3Y8OWjeSKGkEQJQ==" crossorigin="anonymous"></script>
 		<script type="text/javascript" data-cfasync="false" src="js/rawinflate-0.3.js" integrity="sha512-g8uelGgJW9A/Z1tB6Izxab++oj5kdD7B4qC7DHwZkB6DGMXKyzx7v5mvap2HXueI2IIn08YlRYM56jwWdm2ucQ==" crossorigin="anonymous"></script>
 		<script type="text/javascript" data-cfasync="false" src="js/bootstrap-5.3.3.js" integrity="sha512-in2rcOpLTdJ7/pw5qjF4LWHFRtgoBDxXCy49H4YGOcVdGiPaQucGIbOqxt1JvmpvOpq3J/C7VTa0FlioakB2gQ==" crossorigin="anonymous"></script>
-		<script type="text/javascript" data-cfasync="false" src="js/dark-mode-switch.js?<?php echo rawurlencode($VERSION); ?>" integrity="sha512-xdW325H1OW06oUf/Lc4ccJXOUW41tU08iyXVOiVL3SbTufQtKVWi1/cQPrWZ3FagPTNL2CwDMqZsHNmXruHnHg==" crossorigin="anonymous"></script>
+		<script type="text/javascript" data-cfasync="false" src="js/dark-mode-switch.js?<?php echo rawurlencode($VERSION); ?>" integrity="sha512-CCbdHdeWDbDO7aqFFmhgnvFESzaILHbUYmbhNjTpcjyO/XYdouQ9Pw8W9rpV8oJT1TsK5FbwSHU1oazmnb7BWA==" crossorigin="anonymous"></script>
 <?php
 if ($SYNTAXHIGHLIGHTING) :
 ?>
@@ -57,7 +57,7 @@ endif;
 ?>
 		<script type="text/javascript" data-cfasync="false" src="js/purify-3.1.3.js" integrity="sha512-t/FKG/ucQVMWTWVouSMABSEx1r+uSyAI9eNDq0KEr9mPhkgxpJztHI/E72JIpv/+VwPs/Q4husxj14TE9Ps/wg==" crossorigin="anonymous"></script>
 		<script type="text/javascript" data-cfasync="false" src="js/legacy.js?<?php echo rawurlencode($VERSION); ?>" integrity="sha512-LYos+qXHIRqFf5ZPNphvtTB0cgzHUizu2wwcOwcwz/VIpRv9lpcBgPYz4uq6jx0INwCAj6Fbnl5HoKiLufS2jg==" crossorigin="anonymous"></script>
-		<script type="text/javascript" data-cfasync="false" src="js/privatebin.js?<?php echo rawurlencode($VERSION); ?>" integrity="sha512-gVZBjRO45BZ7OeSspLHUVNmNF98wdxk3zebL5KUV/3Ty607YkD6CZw1ORqKpAGvKrKFp/jcaWV5uwpCqfoQGlw==" crossorigin="anonymous"></script>
+		<script type="text/javascript" data-cfasync="false" src="js/privatebin.js?<?php echo rawurlencode($VERSION); ?>" integrity="sha512-cbmXvtZ/5gZPFjQDzP3IEhUAIhFPAoM31gw2kRYCT5xOh8wv9gXeDqI/t798luRW1xdC4gaYodjEFCzrsZR4mA==" crossorigin="anonymous"></script>
 		<!-- icon -->
 		<link rel="apple-touch-icon" href="<?php echo I18n::encode($BASEPATH); ?>img/apple-touch-icon.png" sizes="180x180" />
 		<link rel="icon" type="image/png" href="img/favicon-32x32.png" sizes="32x32" />
@@ -329,7 +329,7 @@ endif;
 			</div>
 		</nav>
 		<main>
-			<section class="container mt-2">
+			<section class="container-fluid mt-2">
 <?php
 if (!empty($NOTICE)) :
 ?>
@@ -422,8 +422,8 @@ endif;
 					</li>
 				</ul>
 			</section>
-			<section class="container">
-				<article class="row">
+			<section class="container-fluid">
+				<article>
 					<div id="placeholder" class="col-md-12 hidden"><?php echo I18n::_('+++ no paste text +++'); ?></div>
 					<div id="attachmentPreview" class="col-md-12 text-center hidden"></div>
 					<div id="prettymessage" class="card col-md-12 hidden">
@@ -433,20 +433,20 @@ endif;
 					<p class="col-md-12"><textarea id="message" name="message" cols="80" rows="25" class="form-control hidden"></textarea></p>
 				</article>
 			</section>
-			<section class="container">
+			<section class="container-fluid">
 				<div id="discussion" class="hidden">
 					<h4><?php echo I18n::_('Discussion'); ?></h4>
 					<div id="commentcontainer"></div>
 				</div>
 			</section>
-			<section class="container">
+			<section class="container-fluid">
 				<div id="noscript" role="alert" class="alert alert-info noscript-hide">
 					<svg width="16" height="16" fill="currentColor" aria-hidden="true"><use href="img/bootstrap-icons.svg#exclamation-circle" /></svg>
 					<?php echo I18n::_('Loading…'); ?><br />
 					<span class="small"><?php echo I18n::_('In case this message never disappears please have a look at <a href="%s">this FAQ for information to troubleshoot</a>.', 'https://github.com/PrivateBin/PrivateBin/wiki/FAQ#why-does-the-loading-message-not-go-away'); ?></span>
 				</div>
 			</section>
-			<footer class="container">
+			<footer class="container-fluid">
 				<div class="row">
 					<h5 class="col-md-5 col-xs-8"><?php echo I18n::_($NAME); ?> <small>- <?php echo I18n::_('Because ignorance is bliss'); ?></small></h5>
 					<p class="col-md-1 col-xs-4 text-center"><?php echo $VERSION; ?></p>

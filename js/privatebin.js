@@ -6,7 +6,6 @@
  * @see       {@link https://github.com/PrivateBin/PrivateBin}
  * @copyright 2012 Sébastien SAUVAGE ({@link http://sebsauvage.net})
  * @license   {@link https://www.opensource.org/licenses/zlib-license.php The zlib/libpng License}
- * @version   1.7.2
  * @name      PrivateBin
  * @namespace
  */
@@ -3767,6 +3766,18 @@ jQuery.PrivateBin = (function($, RawDeflate) {
             }
         }
 
+        /**
+         * Clear the password input in the top navigation
+         * 
+         * @name TopNav.clearPasswordInput
+         * @function
+         */
+
+        function clearPasswordInput()
+        {
+            $passwordInput.val('');
+        }
+
 
         /**
          * Clear the attachment input in the top navigation.
@@ -3831,7 +3842,8 @@ jQuery.PrivateBin = (function($, RawDeflate) {
          */
         function downloadText()
         {
-            var filename='paste-' + Model.getPasteId() + '.txt';
+            var fileFormat = PasteViewer.getFormat() === 'markdown' ? '.md' : '.txt';
+            var filename='paste-' + Model.getPasteId() + fileFormat;
             var text = PasteViewer.getText();
 
             var element = document.createElement('a');
@@ -4348,6 +4360,7 @@ jQuery.PrivateBin = (function($, RawDeflate) {
         me.resetInput = function()
         {
             clearAttachmentInput();
+            clearPasswordInput();
             $burnAfterReading.prop('checked', burnAfterReadingDefault);
             $openDiscussion.prop('checked', openDiscussionDefault);
             if (openDiscussionDefault || !burnAfterReadingDefault) $openDiscussionOption.removeClass('buttondisabled');

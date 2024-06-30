@@ -1,6 +1,13 @@
 # PrivateBin version history
 
-## 1.7.3 (not yet released)
+## 1.7.4 (not yet released)
+* CHANGED: Saving markdown pastes uses `.md` extension instead of `.txt` (#1293)
+* CHANGED: Enable strict type checking in PHP (#1350)
+* FIXED: Reset password input field on creation of new paste (#1194)
+* FIXED: Allow database schema upgrade to skip versions (#1343)
+* FIXED: `bootstrap5` dark mode toggle unset on dark browser preference (#1340)
+
+## 1.7.3 (2024-05-13)
 * CHANGED: Various tweaks of the `bootstrap5` template, suggested by the community
 * CHANGED: Upgrading libraries to: DOMpurify 3.1.3
 * FIXED: Selected expiration not being applied, when using bootstrap template (#1309)
